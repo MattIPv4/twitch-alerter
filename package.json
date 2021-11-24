@@ -1,0 +1,30 @@
+{
+  "name": "twitch-alerter",
+  "version": "0.0.1-dev.1",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "webpack serve --open --env development",
+    "build": "webpack --env production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattIPv4/twitch-alerter.git"
+  },
+  "keywords": [],
+  "author": "Matt (IPv4) Cowley",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/MattIPv4/twitch-alerter/issues"
+  },
+  "homepage": "https://github.com/MattIPv4/twitch-alerter#readme",
+  "dependencies": {
+    "tmi.js": "^1.8.5"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.61.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.4.0"
+  }
+}
