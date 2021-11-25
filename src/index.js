@@ -68,35 +68,35 @@ class Alerts {
     giftPaidUpgrade (channel, username, sender, userstate) {
         // TODO: I suspect this event shouldn't be an alert, seems more analytical (e.g. which gifters convert users)
         const display = userstate['display-name'];
-        console.log(`${display} has subscribed, previously gifted by ${sender}!`, channel, username, sender, userstate);
+        console.log(`${display} has subscribed, previously gifted by ${sender}!`, channel, username, sender, JSON.stringify(userstate, null, 2));
     }
 
-    reSub (channel, username, streakMonths, message, userstate, methods) {
+    reSub (channel, username, streakMonths, message, userstate, method) {
         const display = userstate['display-name'];
         const months = userstate['msg-param-cumulative-months'];
-        console.log(`${display} has re-subscribed, for a total of ${months} months!`, channel, username, streakMonths, message, userstate, methods);
+        console.log(`${display} has re-subscribed, for a total of ${months} months!`, channel, username, streakMonths, message, JSON.stringify(userstate, null, 2), JSON.stringify(method, null, 2));
     }
 
-    subGift (channel, username, streakMonths, recipient, methods, userstate) {
+    subGift (channel, username, streakMonths, recipient, method, userstate) {
         const display = userstate['display-name'];
         const recipientDisplay = userstate['msg-param-recipient-display-name'];
-        console.log(`${display} has gifted ${recipientDisplay} a subscription!`, channel, username, streakMonths, recipient, methods, userstate);
+        console.log(`${display} has gifted ${recipientDisplay} a subscription!`, channel, username, streakMonths, recipient, JSON.stringify(method, null, 2), JSON.stringify(userstate, null, 2));
     }
 
-    subMysteryGift (channel, username, numbOfSubs, methods, userstate) {
+    subMysteryGift (channel, username, numbOfSubs, method, userstate) {
         const display = userstate['display-name'];
-        console.log(`${display} has gifted ${numbOfSubs} subscriptions!`, channel, username, numbOfSubs, methods, userstate);
+        console.log(`${display} has gifted ${numbOfSubs} subscriptions!`, channel, username, numbOfSubs, JSON.stringify(method, null, 2), JSON.stringify(userstate, null, 2));
     }
 
     subscription (channel, username, method, message, userstate) {
         const display = userstate['display-name'];
-        console.log(`${display} has subscribed!`, channel, username, method, message, userstate);
+        console.log(`${display} has subscribed!`, channel, username, JSON.stringify(method, null, 2), message, JSON.stringify(userstate, null, 2));
     }
 
     cheer (channel, userstate, message) {
         const display = userstate['display-name'];
         const bits = userstate.bits;
-        console.log(`${display} has cheered ${bits} bits for ${message}!`, channel, userstate, message);
+        console.log(`${display} has cheered ${bits} bits for ${message}!`, channel, JSON.stringify(userstate, null, 2), message);
     }
 
     hosted (channel, username, viewers, autohost) {
